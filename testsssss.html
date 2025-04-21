@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3b82f6, #9333ea);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: #3b82f6;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="welcomeMessage">Welcome to Our Website!</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="greetUser()">Greet Me</button>
+
+    <script>
+        function greetUser() {
+            const nameInput = document.getElementById('nameInput');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            const clientName = nameInput.value.trim();
+            if (clientName) {
+                welcomeMessage.textContent = `Welcome, ${clientName}!`;
+            } else {
+                welcomeMessage.textContent = 'Welcome to Our Website!';
+            }
+        }
+    </script>
+</body>
+</html>
